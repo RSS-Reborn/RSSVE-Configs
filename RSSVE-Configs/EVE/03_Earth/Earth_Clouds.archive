@@ -1,0 +1,165 @@
+EVE_CLOUDS
+{
+	OBJECT
+	{
+		name = Cumulus
+		body = Earth
+		speed = 0,0,0
+		altitude = 4500
+		settings
+		{
+			_Color = 225,225,225,225
+			_UVNoiseStrength = 0
+			_FlowMap
+			{
+				displacement = 100
+				texture
+				{
+					value = RSS-VE/EVE/03_Earth/Textures/JoolFlowMap
+				}
+			}
+			_MainTex
+			{
+				value = EarthTropical
+				type = AlphaCubeMap
+				alphaMask = ALPHAMAP_G
+			}
+		}
+		layerRaymarchedVolume
+		{
+			scaledFadeStartAltitude = 550000
+			scaledFadeEndAltitude = 600000
+			detailNoiseTiling = 24600
+			upwardsCloudSpeed = 5
+			skylightTintMultiplier = 1
+			skylightMultiplier = 3
+			color = 160,160,160,255
+			noise
+			{
+				worley
+				{
+					octaves = 6
+					periods = 3
+					brightness = 1.2
+					lift = 0.5
+					contrast = 1
+				}
+			}
+			detailNoise
+			{
+				worley
+				{
+					octaves = 6
+					periods = 4
+					brightness = 1
+					contrast = 1
+					lift = 0.75
+				}
+			}
+			raymarchingSettings
+			{
+				maxStepSize = 254000
+				adaptiveStepSizeFactor = 0.00075
+				lightMarchDistance = 3200
+				lightMarchSteps = 8
+				baseStepSize = 240
+			}
+			cloudTypes
+			{
+				Item
+				{
+					typeName = Blank
+					baseNoiseTiling = 16200
+					density = 0
+					detailNoiseStrength = 1
+					interpolateCloudHeights = False
+					coverageCurve
+					{
+						key = 0 0
+						key = 1 0
+					}
+				}
+				Item
+				{
+					typeName = Cumulus Humulis
+					minAltitude = 1200
+					maxAltitude = 1800
+					baseNoiseTiling = 16200
+					density = 0.05
+					detailNoiseStrength = 0.85
+					coverageCurve
+					{
+						key = 0 0 0 5
+						key = 0.2 0.75 3 1
+						key = 1 0.25 0 0
+					}
+				}
+				Item
+				{
+					typeName = Cumulus Mediocris
+					minAltitude = 1200
+					maxAltitude = 3500
+					baseNoiseTiling = 16200
+					density = 0.05
+					detailNoiseStrength = 1.65
+					coverageCurve
+					{
+						key = 0 0 0 5
+						key = 0.2 1 3 1
+						key = 1 0.25 0 0
+					}
+				}
+				Item
+				{
+					typeName = Cumulus Congestus
+					minAltitude = 1200
+					baseNoiseTiling = 16200
+					density = 0.05
+					detailNoiseStrength = 2.5
+					maxAltitude = 8500
+					coverageCurve
+					{
+						key = 0 0 0 5
+						key = 0.2 1 1 1
+						key = 0.8 0.75 -1 -10
+						key = 1 0 0 0
+					}
+				}
+			}
+			coverageMap
+			{
+				value = EarthTropical
+				type = AlphaCubeMap
+				alphaMask = ALPHAMAP_G
+			}
+			cloudTypeMap
+			{
+				value = EarthTropical
+				type = AlphaCubeMap
+				alphaMask = ALPHAMAP_B
+			}
+			curlNoise
+			{
+				octaves = 8
+				periods = 3
+				tiling = 2000
+				strength = 100
+			}
+			cloudColorMap
+			{
+				value = EarthTropicalColor
+				type = CubeMap
+			}
+		}
+		layer2D
+		{
+			macroCloudMaterial
+			{
+			}
+			shadowMaterial
+			{
+				_ShadowFactor = 1.25
+			}
+		}
+	}
+}
