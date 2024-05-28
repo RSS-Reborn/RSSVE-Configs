@@ -10,7 +10,7 @@ Leave an issue [here](https://github.com/RSS-Reborn/RSS-Reborn/issues).
 ---
 
 ## Technical Information
-RSSVE-Configs currently contains all EVE and Scatterer files for RSS-Reborn
+RSSVE-Configs currently contains all EVE and Scatterer configuration files for RSS-Reborn
 
 Folder Layout
 - RSSVE-Configs
